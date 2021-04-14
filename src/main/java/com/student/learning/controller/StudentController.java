@@ -1,6 +1,7 @@
 package com.student.learning.controller;
 
 import com.student.learning.domain.Student;
+import com.student.learning.exception.NoUserFoundException;
 import com.student.learning.exception.UserNameExistException;
 import com.student.learning.service.StudentService;
 import org.springframework.http.HttpStatus;
@@ -39,6 +40,11 @@ public class StudentController {
 
     @ExceptionHandler(UserNameExistException.class)
     public ResponseEntity<String> handleUserNameDuplicateException(UserNameExistException exception){
+        return new ResponseEntity<>(String.format("%s", exception.getMessage()), HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(NoUserFoundException.class)
+    public ResponseEntity<String> handleNoUserExistWithUserId(NoUserFoundException exception){
         return new ResponseEntity<>(String.format("%s", exception.getMessage()), HttpStatus.BAD_REQUEST);
     }
 }
