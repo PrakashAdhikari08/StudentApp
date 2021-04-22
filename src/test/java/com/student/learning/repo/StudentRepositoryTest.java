@@ -24,9 +24,9 @@ class StudentRepositoryTest {
     void shouldCheckTheStudentWithNameExists() {
         //given
         Student student = Student.builder()
-                            .studentName("Prakash")
-                            .gender(Gender.MALE)
-                            .build();
+                .studentName("Prakash")
+                .gender(Gender.MALE)
+                .build();
         //when
         studentRepository.save(student);
         //then
@@ -47,10 +47,7 @@ class StudentRepositoryTest {
     }
 
     @AfterEach
-    void clearDatabase(){
+    void clearDatabase() {
         studentRepository.deleteAll();
     }
-
-
-
 }

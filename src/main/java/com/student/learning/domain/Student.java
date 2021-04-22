@@ -23,7 +23,7 @@ public class Student {
     private String studentName;
 
     @Enumerated(EnumType.STRING)
-    @NotNull
+    @NotNull(message = "Must not be empty. Please select one of the type.")
     private Gender gender;
 
 }

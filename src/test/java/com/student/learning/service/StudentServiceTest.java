@@ -43,7 +43,6 @@ class StudentServiceTest {
         studentService.getAllStudents();
         //then
         verify(studentRepository).findAll();
-
     }
 
     @Test
@@ -103,6 +102,5 @@ class StudentServiceTest {
         assertThatThrownBy(()-> studentService.deleteStudent(student.getStudentID())).isInstanceOf(NoUserFoundException.class)
                 .hasMessageContaining(String.format("No user found with Id %d", student.getStudentID()));
 //        verify(studentRepository, never()).save(any());
-
     }
 }

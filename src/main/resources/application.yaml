@@ -14,4 +14,11 @@ spring:
       hibernate:
         format_sql: true
         dialect: org.hibernate.dialect.MySQL8Dialect
-
+com:
+  student:
+    learning:
+      logging:
+        level: debug,info
+logging:
+  file:
+    name: /Users/adhikp/Downloads/StudentApp/src/main/resources/elk-stack.log
